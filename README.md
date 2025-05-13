@@ -26,78 +26,73 @@ This React + Vite application identifies the pair of employees who have worked t
 ```
 
 Headers are optional (app detects them automatically).
-
 DateTo can be NULL — it will be treated as today.
 
-✅ Supported Date Formats
-YYYY-MM-DD
+## ✅ Supported Date Formats
 
-DD/MM/YYYY
+- YYYY-MM-DD
+- DD/MM/YYYY
+- MM-DD-YYYY
+- MMM D, YYYY
+- MMMM D, YYYY
 
-MM-DD-YYYY
+## 🚀 Getting Started (Vite Setup)
 
-MMM D, YYYY
+### 🔧 Prerequisites
 
-MMMM D, YYYY
+- Node.js v14.18+ (v16+ recommended)
+- npm or yarn
 
-🚀 Getting Started (Vite Setup)
-🔧 Prerequisites
-Node.js v14.18+ (v16+ recommended)
+### 📦 Installation
 
-npm or yarn
-
-📦 Installation
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/atanas-mitev/atanas-mitev-employees.git
 cd atanas-mitev-employees
 npm install
-▶️ Start the Development Server
-bash
-Copy
-Edit
+```
+
+### ▶️ Start the Development Server
+
+```bash
 npm run dev
+```
+
 Then open http://localhost:5173 in your browser.
 
-⚙️ Build for Production
-bash
-Copy
-Edit
+### ⚙️ Build for Production
+
+```bash
 npm run build
+```
+
 This will output static files to the dist/ folder.
 
-🔍 Preview the Production Build (Optional)
-bash
-Copy
-Edit
+### 🔍 Preview the Production Build (Optional)
+
+```bash
 npm run preview
+```
+
 This runs a local server to simulate production.
 
-📊 How It Works
-The user uploads a CSV file.
+## 📊 How It Works
 
-The app parses the data and finds all employee pairs that worked on the same projects.
+1. The user uploads a CSV file.
+2. The app parses the data and finds all employee pairs that worked on the same projects.
+3. It calculates overlapping date ranges per project.
+4. The pair who worked together the most (total days across all projects) is displayed.
+5. The result shows each shared project and number of days worked together.
 
-It calculates overlapping date ranges per project.
+## 🖥 UI Overview
 
-The pair who worked together the most (total days across all projects) is displayed.
+- 📁 File Upload – Drag or click to select .csv file
+- 📊 Table – Lists employee pairs, project ID, and overlapping days
+- 📴 Empty State – Displays a message if no overlapping records are found
+- 📱 Responsive Design – Looks great on mobile and desktop
 
-The result shows each shared project and number of days worked together.
+## 📂 Project Structure
 
-🖥 UI Overview
-📁 File Upload – Drag or click to select .csv file
-
-📊 Table – Lists employee pairs, project ID, and overlapping days
-
-📴 Empty State – Displays a message if no overlapping records are found
-
-📱 Responsive Design – Looks great on mobile and desktop
-
-📂 Project Structure
-bash
-Copy
-Edit
+```bash
 src/
 ├── components/
 │   ├── FileUploader.jsx       # File upload input
@@ -108,32 +103,35 @@ src/
 │   └── workCalculator.js      # Core logic to find overlapping work periods
 ├── App.jsx                    # Main app component
 └── index.css                  # Tailwind base styles
-📦 Built With
-React
+```
 
-Vite
+## 📦 Built With
 
-Tailwind CSS
+- React
+- Vite
+- Tailwind CSS
+- PapaParse - CSV parser
+- Day.js - date formatting and manipulation
 
-PapaParse - CSV parser
+## 🧪 Test It With These CSVs
 
-Day.js - date formatting and manipulation
+| Test Case | Description |
+|-----------|-------------|
+| basic-overlap.csv | Two employees overlap on one project |
+| no-overlap.csv | No employees worked together |
+| multi-project.csv | Longest-working pair across multiple projects |
+| multi-date-formats.csv | Uses various date formats (bonus point test) |
+| duplicate-projects.csv | Same project worked twice by same employees |
 
-🧪 Test It With These CSVs
-Test Case	Description
-basic-overlap.csv	Two employees overlap on one project
-no-overlap.csv	No employees worked together
-multi-project.csv	Longest-working pair across multiple projects
-multi-date-formats.csv	Uses various date formats (bonus point test)
-duplicate-projects.csv	Same project worked twice by same employees
+## 💡 Notes
 
-💡 Notes
-Malformed or invalid rows are skipped and logged to the console.
+- Malformed or invalid rows are skipped and logged to the console.
+- You can freely customize the look with Tailwind utility classes.
 
-You can freely customize the look with Tailwind utility classes.
+## 📜 License
 
-📜 License
 MIT – Feel free to fork, use, or adapt.
 
-🤝 Credits
+## 🤝 Credits
+
 Built as part of a frontend-focused challenge task.
