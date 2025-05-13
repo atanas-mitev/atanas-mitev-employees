@@ -52,8 +52,8 @@ Clone the repository:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/FirstName-LastName-employees.git
-cd FirstName-LastName-employees
+git clone https://github.com/atanas-mitev/atanas-mitev-employees.git
+cd atanas-mitev-employees
 Install dependencies:
 
 bash
